@@ -1,0 +1,1 @@
+../../../TTAnimations/TTAnimations/rotating_exits/RotateOutUpRightAnimation.h

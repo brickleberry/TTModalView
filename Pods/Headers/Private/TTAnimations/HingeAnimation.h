@@ -1,0 +1,1 @@
+../../../TTAnimations/TTAnimations/specials/HingeAnimation.h
