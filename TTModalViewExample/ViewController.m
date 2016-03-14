@@ -68,6 +68,7 @@
     
     [_modalView dismiss];
 
+
 }
 
 
@@ -140,6 +141,20 @@
                 }];
             }];
             
+            break;
+        case 4:
+            _modalView.presentAnimationStyle = lightSpeedIn;
+            _modalView.dismissAnimationStyle = lightSpeedOut;
+            _modalView.contentView =_targetView4;
+            _modalView.isCancelAble = YES;
+            [_modalView showWithDidAddContentBlock:^(UIView *contentView) {
+                
+                [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.centerY.centerX.equalTo(contentView.superview);
+                    make.height.equalTo(@140);
+                    make.width.equalTo(@300);
+                }];
+            }];
             break;
         default:
             break;
