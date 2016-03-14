@@ -39,7 +39,8 @@
     
     _targetView4 = views[1];
     _targetView4.layer.borderColor = [UIColor grayColor].CGColor;
-    _targetView4.layer.cornerRadius = 5.0f;
+    _targetView4.layer.borderWidth = 1.0f;
+    _targetView4.layer.cornerRadius = 10.0f;
     
     _modalView = [[TTModalView alloc] initWithContentView:nil delegate:nil];
     
@@ -68,6 +69,8 @@
     [_modalView dismiss];
 
 }
+
+
 
 
 #pragma mark tableviewdelegate
@@ -121,9 +124,13 @@
             
             break;
         case 3:
+            /**
+             *  support many in  out animation style
+             */
             _modalView.presentAnimationStyle = flipInx;
             _modalView.dismissAnimationStyle = flipOutX;
             _modalView.contentView =_targetView4;
+            _modalView.isCancelAble = YES;
             [_modalView showWithDidAddContentBlock:^(UIView *contentView) {
                 
                 [contentView mas_makeConstraints:^(MASConstraintMaker *make) {

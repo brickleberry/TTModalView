@@ -51,10 +51,16 @@
                     <rect key="frame" x="41" y="96" width="74" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancelButtonDidClock:" destination="-1" eventType="touchUpInside" id="qFB-At-LzO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxe-M4-FnS">
                     <rect key="frame" x="206" y="96" width="46" height="30"/>
                     <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="OkButtonDidClick:" destination="-1" eventType="touchUpInside" id="znE-l4-XZZ"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-3Z-mAO">
                     <rect key="frame" x="152" y="87" width="1" height="50"/>
