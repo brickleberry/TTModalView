@@ -5,7 +5,7 @@ TTModalView是一个自定义内容的模态窗口组件,可以任意定制窗�
 
 # Demo
 
-![](https://raw.githubusercontent.com/jiangtiteng/TTAnimations/master/TTAnimations.gif)
+![](https://raw.githubusercontent.com/jiangtiteng/TTModalView/master/TTModalView.gif)
 
 
 ##Basic Usage
