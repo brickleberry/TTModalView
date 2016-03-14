@@ -14,7 +14,9 @@
 
 @property(nonatomic,strong)TTModalView * modalView;
 @property(nonatomic,strong)UIImageView * targetView1;
+@property(nonatomic,strong)UIView * targetView2;
 @property(nonatomic,strong)TTDatepickerView * targetView3;
+@property(nonatomic,strong)UIView * targetView4;
 @end
 
 @implementation ViewController
@@ -23,15 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-//    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"ViewController" owner:nil options:nil];
-//    _test1 = views[0];
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"ViewController" owner:nil options:nil];
+
     //init targetview
     _targetView1 = [[UIImageView alloc] init];
     [_targetView1 setImage:[UIImage imageNamed:@"demo1"]];
     
+    _targetView2 = views[0];
+    
     _targetView3 = [[TTDatepickerView alloc] initWithFrame:CGRectZero];
     [_targetView3 setDelegate:self];
+    
+    _targetView4 = views[1];
+    _targetView4.layer.borderColor = [UIColor grayColor].CGColor;
+    _targetView4.layer.cornerRadius = 5.0f;
     
     _modalView = [[TTModalView alloc] initWithContentView:nil delegate:nil];
     
@@ -81,6 +89,19 @@
             }];
             break;
         case 1:
+            _modalView.presentAnimationStyle = SlideInDown;
+            _modalView.dismissAnimationStyle = SlideOutUp;
+            _modalView.contentView =_targetView2;
+            _modalView.isCancelAble = YES;
+            [_modalView showWithDidAddContentBlock:^(UIView *contentView) {
+                
+                [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.trailing.equalTo(contentView.superview);
+                    make.top.equalTo(contentView.superview);
+                    make.height.equalTo(@58);
+                }];
+            }];
+            break;
 
             break;
             
@@ -95,6 +116,20 @@
                     make.left.trailing.equalTo(contentView.superview);
                     make.centerY.equalTo(contentView.superview);
                     make.height.equalTo(@220);
+                }];
+            }];
+            
+            break;
+        case 3:
+            _modalView.presentAnimationStyle = flipInx;
+            _modalView.dismissAnimationStyle = flipOutX;
+            _modalView.contentView =_targetView4;
+            [_modalView showWithDidAddContentBlock:^(UIView *contentView) {
+                
+                [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.centerY.centerX.equalTo(contentView.superview);
+                    make.height.equalTo(@140);
+                    make.width.equalTo(@300);
                 }];
             }];
             
