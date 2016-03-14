@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTDatepickerView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController<TTDatepickerDelegate>
 
 
 @end

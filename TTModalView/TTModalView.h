@@ -10,7 +10,7 @@
 #import <TTAnimations/AnimationCommon.h>
 
 
-typedef  void(^TTModalDidAddContentBlock)(UIView * superView);
+typedef  void(^TTModalDidAddContentBlock)(UIView * contentView);
 
 typedef NS_ENUM(NSUInteger,TTModalOverlayMode){
     TTModalOverlayModeNone,
